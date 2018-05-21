@@ -55,6 +55,7 @@ public class GuestbookController {
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
         Condition condition=new Condition(Guestbook.class);
+
         condition.orderBy("date").desc();
         List<Guestbook> list = guestbookService.findByCondition(condition);
         PageInfo pageInfo = new PageInfo(list);
