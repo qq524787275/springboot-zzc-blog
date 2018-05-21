@@ -39,7 +39,7 @@ public class AdminController {
     }
 
 
-    @RequestMapping("/list")
+    @PostMapping("/list")
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
         List<Admin> list = adminService.findAll();

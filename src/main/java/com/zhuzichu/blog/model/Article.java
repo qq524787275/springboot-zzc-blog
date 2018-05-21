@@ -1,5 +1,7 @@
 package com.zhuzichu.blog.model;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
 
 public class Article {
@@ -13,6 +15,7 @@ public class Article {
     /**
      * 文章标题
      */
+    @NotBlank(message = "标题不能为空")
     private String title;
 
     /**
@@ -26,8 +29,14 @@ public class Article {
     private Integer uid;
 
     /**
+     * 点赞次数
+     */
+    private Integer like;
+
+    /**
      * 富文本数据
      */
+    @NotBlank(message = "内容不能为空")
     private String content;
 
     /**
@@ -100,6 +109,24 @@ public class Article {
      */
     public void setUid(Integer uid) {
         this.uid = uid;
+    }
+
+    /**
+     * 获取点赞次数
+     *
+     * @return like - 点赞次数
+     */
+    public Integer getLike() {
+        return like;
+    }
+
+    /**
+     * 设置点赞次数
+     *
+     * @param like 点赞次数
+     */
+    public void setLike(Integer like) {
+        this.like = like;
     }
 
     /**

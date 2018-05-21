@@ -9,6 +9,7 @@
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="date" jdbcType="INTEGER" property="date" />
     <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="like" jdbcType="INTEGER" property="like" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
 </mapper>

@@ -160,8 +160,10 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 
                     }
                 }
-            }).addPathPatterns("/**").
-               excludePathPatterns("/api/admin/login");
+            }).addPathPatterns("/**")
+                    .excludePathPatterns("/api/guestbook/**")
+                    .excludePathPatterns("/api/project/list")
+                    .excludePathPatterns("/api/admin/login");
 
         }
     }
@@ -217,7 +219,6 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
         if (ip != null && ip.indexOf(",") != -1) {
             ip = ip.substring(0, ip.indexOf(",")).trim();
         }
-
         return ip;
     }
 }

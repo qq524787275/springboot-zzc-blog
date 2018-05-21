@@ -4,7 +4,7 @@ import com.zhuzichu.blog.core.service.Service;
 
 
 /**
- * Created by zzc on 2018/05/10.
+ * Created by zzc on 2018/05/15.
  */
 public interface ArticleService extends Service<Article> {
 

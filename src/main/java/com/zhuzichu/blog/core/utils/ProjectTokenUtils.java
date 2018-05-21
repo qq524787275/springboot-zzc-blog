@@ -25,7 +25,7 @@ public class ProjectTokenUtils {
     public static String createJWTToken(int uid, String username) throws Exception {
         Date iatDate = new Date();
         Calendar nowTime = Calendar.getInstance();
-        nowTime.add(Calendar.MINUTE, 1);
+        nowTime.add(Calendar.MINUTE, 60);
         Date expiresDate = nowTime.getTime();
 
         Map<String, Object> map = new HashMap<>();
