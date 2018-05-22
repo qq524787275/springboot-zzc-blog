@@ -43,6 +43,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
         <!--热部署-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -131,7 +136,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <!--七牛-->
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>7.2.8</version>
+        </dependency>
         <!--json解析相关开始,jackson-->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
@@ -167,7 +177,11 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.4</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.11.2</version>
+        </dependency>
 
     </dependencies>
 

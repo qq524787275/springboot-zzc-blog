@@ -16,4 +16,4 @@ spring:
       min-idle: 0
     timeout: 0
 server:
-  port: 8011
+  port: 8012

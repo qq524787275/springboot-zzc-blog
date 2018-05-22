@@ -5,6 +5,10 @@ import com.zhuzichu.blog.model.Project;
 import com.zhuzichu.blog.service.ProjectService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.zhuzichu.blog.utils.ConstantQiniu;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +25,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/project")
 public class ProjectController {
+    @Autowired
+    ConstantQiniu constantQiniu;
+
     @Resource
     private ProjectService projectService;
 

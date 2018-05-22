@@ -1,3 +1,8 @@
 spring:
   profiles:
     active: test
+qiniu:
+  accessKey: W88LIHs3q2MAwXwMzLuXRRWeb8Yh9zACA85eRRaV
+  secretKey: UHwmRClWqtCUfT3Fyw0RWaenLKHWSeS-A5zR7Lk6
+  bucket: zzc-blog
+  path: http://p92kadrzx.bkt.clouddn.com
