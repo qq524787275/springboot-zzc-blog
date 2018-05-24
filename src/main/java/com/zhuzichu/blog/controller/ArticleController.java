@@ -3,15 +3,18 @@ import com.zhuzichu.blog.core.result.Result;
 import com.zhuzichu.blog.core.result.ResultGenerator;
 import com.zhuzichu.blog.core.utils.ProjectDateUtils;
 import com.zhuzichu.blog.model.Article;
+import com.zhuzichu.blog.model.Guestbook;
 import com.zhuzichu.blog.service.ArticleService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.el.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import tk.mybatis.mapper.entity.Condition;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -50,17 +53,25 @@ public class ArticleController {
 //        return ResultGenerator.genSuccessResult();
 //    }
 //
-//    @RequestMapping("/detail")
-//    public Result detail(@RequestParam Integer id) {
-//        Article article = articleService.findById(id);
-//        return ResultGenerator.genSuccessResult(article);
-//    }
+    @RequestMapping("/detail")
+    public Result detail(@RequestParam Integer id) {
+        Article article = articleService.findById(id);
+        if(article!=null){
+            return ResultGenerator.genSuccessResult(article);
+        }
+        return ResultGenerator.genFailResult("无数据");
+    }
 
     @RequestMapping("/list")
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
-        List<Article> list = articleService.findAll();
+//        Condition condition=new Condition(Article.class);
+//        condition.orderBy("date").desc();
+//        List<Article> list = articleService.findByCondition(condition);
+        List<Article> list=articleService.findAllDesc();
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
     }
+
+
 }

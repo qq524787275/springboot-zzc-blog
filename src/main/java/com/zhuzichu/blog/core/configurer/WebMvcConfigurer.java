@@ -165,6 +165,8 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
                     .excludePathPatterns("/api/project/list")
                     .excludePathPatterns("/api/file/upload")
                     .excludePathPatterns("/api/file/uptoken")
+                    .excludePathPatterns("/api/article/detail")
+                    .excludePathPatterns("/api/article/list")
                     .excludePathPatterns("/api/about/getAbout")
                     .excludePathPatterns("/api/admin/login");
 

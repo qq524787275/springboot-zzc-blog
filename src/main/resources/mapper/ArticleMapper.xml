@@ -9,7 +9,12 @@
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="date" jdbcType="INTEGER" property="date" />
     <result column="uid" jdbcType="INTEGER" property="uid" />
-    <result column="like" jdbcType="INTEGER" property="like" />
+    <result column="love" jdbcType="INTEGER" property="love" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
   </resultMap>
+
+  <select id="selectAllDesc" resultMap="BaseResultMap">
+    SELECT id,title,article.date,uid,love,description FROM article ORDER BY article.date DESC
+  </select>
 </mapper>

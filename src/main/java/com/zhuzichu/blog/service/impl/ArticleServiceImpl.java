@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 /**
@@ -19,4 +20,8 @@ public class ArticleServiceImpl extends AbstractService<Article> implements Arti
     @Resource
     private ArticleMapper articleMapper;
 
+    @Override
+    public List<Article> findAllDesc() {
+        return articleMapper.selectAllDesc();
+    }
 }

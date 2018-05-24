@@ -1,5 +1,6 @@
 package com.zhuzichu.blog.model;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ public class Article {
      * 文章标题
      */
     @NotBlank(message = "标题不能为空")
+    @Length(max = 15,min = 5,message = "标题字数要大于5少于15")
     private String title;
 
     /**
@@ -31,13 +33,26 @@ public class Article {
     /**
      * 点赞次数
      */
-    private Integer like;
+    private Integer love;
 
     /**
      * 富文本数据
      */
     @NotBlank(message = "内容不能为空")
+    @Length(min = 10,message = "内容字数大于10")
     private String content;
+
+    @Length(max = 50,min = 5,message = "描述信息字数要大于5少于50")
+    @NotBlank(message = "描述不能为空")
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     /**
      * 获取文章id
@@ -56,6 +71,7 @@ public class Article {
     public void setId(Integer id) {
         this.id = id;
     }
+
 
     /**
      * 获取文章标题
@@ -117,16 +133,16 @@ public class Article {
      * @return like - 点赞次数
      */
     public Integer getLike() {
-        return like;
+        return love;
     }
 
     /**
      * 设置点赞次数
      *
-     * @param like 点赞次数
+     * @param love 点赞次数
      */
-    public void setLike(Integer like) {
-        this.like = like;
+    public void setLike(Integer love) {
+        this.love = love;
     }
 
     /**

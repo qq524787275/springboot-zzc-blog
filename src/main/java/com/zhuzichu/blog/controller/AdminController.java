@@ -3,7 +3,6 @@ package com.zhuzichu.blog.controller;
 import com.zhuzichu.blog.annotations.Access;
 import com.zhuzichu.blog.core.result.Result;
 import com.zhuzichu.blog.core.result.ResultGenerator;
-import com.zhuzichu.blog.core.utils.ProjectMD5Utils;
 import com.zhuzichu.blog.model.Admin;
 import com.zhuzichu.blog.service.AdminService;
 import com.github.pagehelper.PageHelper;
