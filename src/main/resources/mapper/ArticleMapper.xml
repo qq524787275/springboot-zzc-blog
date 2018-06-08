@@ -12,9 +12,15 @@
     <result column="love" jdbcType="INTEGER" property="love" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
     <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="visible" jdbcType="TINYINT" property="visible" />
+    <result column="eyes" jdbcType="INTEGER" property="eyes" />
   </resultMap>
 
   <select id="selectAllDesc" resultMap="BaseResultMap">
-    SELECT id,title,article.date,uid,love,description FROM article ORDER BY article.date DESC
+    SELECT id,title,article.date,uid,love,description,visible,eyes FROM article ORDER BY article.date DESC
+  </select>
+  
+  <select id="selectAllDescVisible" resultMap="BaseResultMap">
+     SELECT id,title,article.date,uid,love,description,eyes FROM article WHERE visible=1 ORDER BY article.date DESC
   </select>
 </mapper>

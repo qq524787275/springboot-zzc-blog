@@ -17,6 +17,7 @@ import tk.mybatis.mapper.entity.Condition;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -32,16 +33,12 @@ public class ProjectController {
     private ProjectService projectService;
 
     @PostMapping("/add")
-    public Result add(Project project) {
+    public Result add(@Valid Project project) {
+        project.setRank(projectService.findAll().size()+1);
         projectService.save(project);
         return ResultGenerator.genSuccessResult();
     }
 
-    @PostMapping("/delete")
-    public Result delete(@RequestParam Integer id) {
-        projectService.deleteById(id);
-        return ResultGenerator.genSuccessResult();
-    }
 
     @PostMapping("/update")
     public Result update(Project project) {

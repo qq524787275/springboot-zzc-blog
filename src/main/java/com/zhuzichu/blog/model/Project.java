@@ -1,5 +1,7 @@
 package com.zhuzichu.blog.model;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
 
 public class Project {
@@ -10,11 +12,13 @@ public class Project {
     /**
      * 项目标题
      */
+    @NotBlank(message = "项目名不能为空")
     private String title;
 
     /**
      * 项目描述信息
      */
+    @NotBlank(message = "描述信息不能为空")
     private String description;
 
     /**

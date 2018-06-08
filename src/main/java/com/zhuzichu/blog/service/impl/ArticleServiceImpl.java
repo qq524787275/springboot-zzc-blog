@@ -24,4 +24,9 @@ public class ArticleServiceImpl extends AbstractService<Article> implements Arti
     public List<Article> findAllDesc() {
         return articleMapper.selectAllDesc();
     }
+
+    @Override
+    public List<Article> findAllDescVisible() {
+        return articleMapper.selectAllDescVisible();
+    }
 }

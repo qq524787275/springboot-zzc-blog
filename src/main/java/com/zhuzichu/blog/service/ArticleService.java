@@ -11,4 +11,6 @@ import java.util.List;
 public interface ArticleService extends Service<Article> {
 
     List<Article> findAllDesc();
+
+    List<Article> findAllDescVisible();
 }

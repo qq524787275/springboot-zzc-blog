@@ -8,4 +8,7 @@ import java.util.List;
 public interface ArticleMapper extends Mapper<Article> {
 
     List<Article> selectAllDesc();
+
+    List<Article> selectAllDescVisible();
+
 }

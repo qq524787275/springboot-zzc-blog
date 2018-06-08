@@ -17,7 +17,7 @@ public class Article {
      * 文章标题
      */
     @NotBlank(message = "标题不能为空")
-    @Length(max = 15,min = 5,message = "标题字数要大于5少于15")
+    @Length(max = 50,min = 5,message = "标题字数要大于5少于50")
     private String title;
 
     /**
@@ -42,9 +42,29 @@ public class Article {
     @Length(min = 10,message = "内容字数大于10")
     private String content;
 
-    @Length(max = 50,min = 5,message = "描述信息字数要大于5少于50")
+    @Length(max = 150,min = 5,message = "描述信息字数要大于5少于150")
     @NotBlank(message = "描述不能为空")
     private String description;
+
+    private boolean visible;
+
+    private Integer eyes;
+
+    public Integer getEyes() {
+        return eyes;
+    }
+
+    public void setEyes(Integer eyes) {
+        this.eyes = eyes;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
 
     public String getDescription() {
         return description;
@@ -53,6 +73,7 @@ public class Article {
     public void setDescription(String description) {
         this.description = description;
     }
+
 
     /**
      * 获取文章id
@@ -72,6 +93,20 @@ public class Article {
         this.id = id;
     }
 
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", date=" + date +
+                ", uid=" + uid +
+                ", love=" + love +
+                ", content='" + content + '\'' +
+                ", description='" + description + '\'' +
+                ", visible=" + visible +
+                '}';
+    }
 
     /**
      * 获取文章标题
@@ -130,9 +165,9 @@ public class Article {
     /**
      * 获取点赞次数
      *
-     * @return like - 点赞次数
+     * @return love - 点赞次数
      */
-    public Integer getLike() {
+    public Integer getLove() {
         return love;
     }
 
@@ -141,7 +176,7 @@ public class Article {
      *
      * @param love 点赞次数
      */
-    public void setLike(Integer love) {
+    public void setLove(Integer love) {
         this.love = love;
     }
 
