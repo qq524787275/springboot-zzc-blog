@@ -168,6 +168,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
                     .excludePathPatterns("/api/article/visibleDetail")
                     .excludePathPatterns("/api/article/visibleList")
                     .excludePathPatterns("/api/about/getAbout")
+                    .excludePathPatterns("/api/websocket/**")
                     .excludePathPatterns("/api/admin/login");
         }
     }
