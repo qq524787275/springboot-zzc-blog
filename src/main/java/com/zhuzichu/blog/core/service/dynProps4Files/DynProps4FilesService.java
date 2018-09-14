@@ -2,10 +2,10 @@ package com.zhuzichu.blog.core.service.dynProps4Files;
 
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.apache.commons.io.IOUtils;
 
 import java.io.*;
 import java.util.*;

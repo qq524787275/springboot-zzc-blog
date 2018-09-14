@@ -23,4 +23,5 @@
   <select id="selectAllDescVisible" resultMap="BaseResultMap">
      SELECT id,title,article.date,uid,love,description,eyes FROM article WHERE visible=1 ORDER BY article.date DESC
   </select>
+
 </mapper>

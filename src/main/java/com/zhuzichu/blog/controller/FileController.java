@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -32,7 +33,7 @@ public class FileController {
     @ResponseBody
     public Result upload(@RequestParam("file") MultipartFile multipartFile) {
         try {
-            FileInputStream inputStream = (FileInputStream) multipartFile.getInputStream();
+            ByteArrayInputStream inputStream = (ByteArrayInputStream) multipartFile.getInputStream();
             String fileName=multipartFile.getOriginalFilename();
             String fileType=fileName.substring(fileName.lastIndexOf("."),fileName.length());
             String path = uploadQNImg(inputStream,System.currentTimeMillis()+fileType);
@@ -53,7 +54,7 @@ public class FileController {
         return ResultGenerator.genSuccessResult(uptoken);
     }
 
-    private String uploadQNImg(FileInputStream file, String key) {
+    private String uploadQNImg(ByteArrayInputStream file, String key) {
         // 构造一个带指定Zone对象的配置类
         Configuration cfg = new Configuration(Zone.zone0());
         // 其他参数参考类注释

@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: test
+    active: pro
 qiniu:
   accessKey: W88LIHs3q2MAwXwMzLuXRRWeb8Yh9zACA85eRRaV
   secretKey: UHwmRClWqtCUfT3Fyw0RWaenLKHWSeS-A5zR7Lk6

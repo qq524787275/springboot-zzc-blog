@@ -5,7 +5,7 @@ import com.zhuzichu.blog.core.service.dynProps4Files.DynProps4FilesService;
 import com.zhuzichu.blog.core.service.redis.RedisResult;
 import com.zhuzichu.blog.core.service.redis.RedisService;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.apache.commons.io.IOUtils;
 import org.codehaus.jackson.type.JavaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -105,7 +105,7 @@ public class RedisServiceImpl implements RedisService {
         if (jedis == null) {
             return;
         }
-        IOUtils.closeQuietly(jedis);
+        jedis.close();
     }
 
     /**
